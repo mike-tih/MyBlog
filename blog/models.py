@@ -1,11 +1,14 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.encoding import python_2_unicode_compatible
 
-
+@python_2_unicode_compatible
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
+    short_text = models.TextField()
+    image_link = models.TextField()
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -17,3 +20,4 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+        

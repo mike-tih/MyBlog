@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>My Fucking Website</title>
+		<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="static/css/icon.css">
+		<link rel="stylesheet" type="text/css" href="static/css/styles.css">
+	</head>
+	<body>
+		<div class="head_banner">
+		</div>
+		<div class="body_block">
+			<div class="content_list">
+			
+				
+				{% for post in posts %}
+					<div class="article_preview" onclick="location.href='';">
+						<div class="article_preview_image">
+							<img src="" >
+						</div>
+						<div class="article_preview_content">
+							<div class="article_preview_content_text">
+								<div class="article_preview_title">
+									<h2>{{ post.title }}</h2>
+								</div>
+								<div class="article_preview_info">
+									<i class="calender icon" style="zoom: 0.5; margin-right: -6px;"></i> {{ post.published_date }} <i class="user icon" style="zoom: 0.5;"></i>By {{ post.author }}
+								</div>
+								<div class="article_preview_text">
+									<p>{{ post.short_text|linebreaksbr }}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+				
+				<div class="pages_line">
+					<div class="page_button" onclick="location.href='';">
+					<p class="pages_numbers">1</p>
+					</div>
+					<div class="page_button" onclick="location.href='';">
+					<p class="pages_numbers">2</p>
+					</div>
+					<div class="page_button" onclick="location.href='';">
+					<p class="pages_numbers">></p>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="widgets_list">
+			</div>
+		</div>
+		
+		<div class="footer">
+		
+		</div>
+	</body>
+</html>
